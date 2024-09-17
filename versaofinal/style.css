@@ -1,0 +1,356 @@
+body {
+    margin: 0;
+    font-family: Verdana, sans-serif;
+    background-color: #8c52ff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    text-align: center;
+}
+
+.conteudo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.palavra {
+    font-family: Verdana, sans-serif;
+    margin-right: 200px;
+    margin-left: 100px;
+    margin-bottom: 50px;
+    font-size: 90px;
+    color: black;
+    font-weight: bold;
+    left: 300px;
+    position: absolute;   
+}
+
+.lupa {
+    position: absolute;
+    width: 300px;
+    height: 200px;
+    top: 280px;
+    left: 720px;
+}
+
+#foco{
+    font-size: 110px; 
+    font-weight: bold;
+    color: black;
+    left: 805px;
+    top: 295px;
+    position: absolute;
+}
+
+.botao{
+    margin-top: 400px;
+    position: absolute;
+    padding: 25px 50px;
+    font-size: 2em;
+    color: #000;
+    background-color: #ffe403;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    text-decoration: none;
+}
+
+.botao:hover{
+    background-color: #e5c72e;
+}
+
+#bttContinuar {
+    position: absolute;
+    top: 10px;
+    left: 230px;
+    padding: 20px 40px; 
+}
+
+.regras_container {
+    background-color: #6ac9d7;
+    border-radius: 25px;
+    padding: 60px;
+    width: 600px;
+    position: absolute;
+    font-size: 20px;
+    color: black;
+    bottom: 250px;
+}
+
+.container {
+    background-color: #a259ff;
+    border-radius: 40px;
+    padding: 80px;
+    width: 60%; 
+    max-width: 1400px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: relative;
+}
+
+.coluna {
+    background-color: #fc6b06;
+    border-radius: 25px;
+    padding: 50px;
+    width: 45%;
+    text-align: center;
+}
+
+.game-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #000;
+    width: 80%; 
+}
+.players {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.player {
+    background-color: #00ced1;
+    padding: 20px 30px;
+    border-radius: 20px;
+    font-weight: bold;
+}
+
+.game {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.hangman-structure {
+    position: relative;
+    height: 150px;
+    width: 200px;
+    margin-bottom: 10px;
+    margin-top: 20px;
+    left: 20px;
+}
+
+.line {
+    background-color: #000;
+    position: absolute;
+}
+
+.vertical {
+    width: 5px;
+    height: 100%;
+    left: 20px;
+    top: 0;
+}
+
+.horizontal {
+    width: 100px;
+    height: 5px;
+    left: 0; 
+    top: 0; 
+}
+
+.circle {
+    width: 40px;
+    height: 40px;
+    border: 5px solid #000;
+    border-radius: 50%;
+    position: absolute;
+    right: 0;
+    top: 50px;
+}
+
+.player-title {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 0 30px;
+}
+
+.word-container {
+    font-size: 30px;
+    font-weight: bold;
+    display: flex;
+    justify-content: flex-start; 
+    margin-bottom: 10px;
+    z-index: 1; 
+}
+
+.letter, .underscore {
+    font-size: 30px;
+    margin: 0 5px;
+    font-weight: bold;
+}
+
+.underscore {
+    border-bottom: 2px solid #000;
+}
+
+.keyboard {
+    margin-top: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 600px;
+}
+
+.key {
+    background-color: #000;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+}
+
+.key:focus {
+    outline: none;
+}
+
+.key:active {
+    background-color: #333;
+}
+
+.key.usada {
+    background-color: #ccc; 
+    cursor: not-allowed;
+}
+
+.key.jogador1 {
+    background-color: #6ac9d7;
+}
+
+.key.jogador2 {
+    background-color: #fc6b06;
+}
+
+.nova-partida {
+    position: absolute;
+    bottom: 300px;
+    padding: 30px 60px;
+    font-size: 2em;
+    background-color: #ffe403;
+    border: none;
+    border-radius: 35px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.nova-partida:hover {
+    background-color: #e5c72e;
+}
+
+#forca1, #forca2 {
+    position: relative;
+    height: 60px;
+    width: 100px;
+    margin: 0 auto;
+    z-index: 2; 
+}
+
+.parte-boneco {
+    display: none;
+    position: absolute;   
+    background-color: black;
+}
+
+#cabeca1, #cabeca2 {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 5px solid black;
+    left: 40px; 
+    bottom: 165px;
+}
+
+#corpo1, #corpo2 {
+    width: 10px;
+    height: 80px;
+    left: 60px;
+    bottom: 90px;
+}
+
+#braco-direito1, #braco-direito2 {
+    left: 22px;
+    width: 50px;
+    height: 10px;
+    transform: rotate(-45deg);
+    bottom: 130px;
+}
+
+#braco-esquerdo1, #braco-esquerdo2 {
+    left: 57px;
+    width: 50px;
+    height: 10px;
+    transform: rotate(45deg);
+    bottom: 130px;
+}
+
+#perna-esquerda1, #perna-esquerda2 {
+    left: 57px;
+    width: 50px;
+    height: 10px;
+    transform: rotate(45deg);
+    bottom: 75px;
+}
+
+#perna-direita1, #perna-direita2 {
+    left: 22px;
+    width: 50px;
+    height: 10px;
+    transform: rotate(-45deg);
+    bottom: 75px;
+}
+
+.teclas-utilizadas {
+    margin-top: 20px;
+    font-size: 16px;
+    color: black;
+    background-color: white;
+    border-radius: 10px;
+    padding: 10px;
+    width: 300px;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.status{
+    margin: 20px 0;
+}
+
+#turno-jogador {
+    font-size: 2em;
+    font-weight: bold;
+    padding: 20px;
+    border-radius: 15px;
+    width: fit-content;
+    margin: 20px auto;
+    transition: background-color 0.5s, color 0.5s;
+}
+
+#turno-jogador.vitoria {
+    background-color: lightgreen;
+    color: #fff;
+    font-weight: bold;
+}
+
+#turno-jogador.derrota {
+    background-color: red;
+    color: #fff;
+    font-weight: bold;
+}
